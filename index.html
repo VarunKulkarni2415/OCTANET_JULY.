@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Black Navbar</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    .navbar {
+      background-color: #000;
+      color: #fff;
+      height: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 20px;
+    }
+
+    .brand-logo {
+      display: inline-block;
+      margin-right: 10px;
+  
+
+
+  width: 40px;
+    }
+
+    .brand-name {
+      font-size: 18px;
+      font-weight: bold;
+    }
+
+    .dropdown {
+      position: relative;
+      display: inline-block;
+      margin-right: 10px;
+    }
+
+    .dropdown-toggle {
+      cursor: pointer;
+      color: #fff;
+      padding: 12px;
+      text-decoration: none;
+    }
+
+    .dropdown-menu {
+      display: none;
+      position: absolute;
+      background-color: #000;
+      min-width: 160px;
+      box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+      z-index: 1;
+    }
+
+    .dropdown:hover .dropdown-menu {
+      display: block;
+    }
+
+    .dropdown-item {
+      color: #fff;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+    }
+
+    .dropdown-item:hover {
+      background-color: #333;
+    }
+
+    .section-homepage {
+        background-image: url('hello.jpg');
+        background-size: cover;
+        background-position: center;
+        height: 400px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        text-align: center;
+        color: #fff;
+        padding: 20px;
+      }
+  
+      .shop-now-button {
+        background-color: #fff;
+        color: #000;
+        padding: 10px 20px;
+        font-weight: bold;
+        text-decoration: none;
+        border-radius: 4px;
+        margin-bottom: 10px;
+      }
+  
+      .discount-text {
+        font-family: 'Courier New', monospace;
+        font-size: 50px;
+        font-weight: bold;
+      }
+
+      
+    .shipping-section {
+     background-color: lavenderblush;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        margin-top: 20px;
+      }
+  
+      .shipping-option {
+        text-align: center;
+      }
+  
+      .shipping-option img {
+        width: 80px;
+        height: 80px;
+      }
+  
+      .shipping-option h3 {
+        font-size: 18px;
+        margin-top: 10px;
+      }
+  
+      .shipping-option p {
+        font-size: 14px;
+        color: #777;
+        margin-top: 5px;
+      }
+
+      
+    .top-picks-section {
+        
+        background-image: url('tp.jpg');
+        font-family: 'Courier New', monospace;
+
+        text-align: center;
+        margin-top: 20px;
+      }
+  
+      .top-picks-title {
+        background-color:papayawhip;
+        font-size: 24px;
+        font-weight: bold;
+        margin-bottom: 10px;
+      }
+  
+      .top-picks-list {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+      }
+  
+      .top-picks-item {
+        margin: 10px;
+      }
+  
+      .top-picks-item img {
+        width: 200px;
+        height: 200px;
+        object-fit: cover;
+        border-radius: 5px;
+      }
+  
+      .top-picks-item p {
+        margin-top: 5px;
+        font-size: 16px;
+        color: whitesmoke;
+      }
+
+      /*section4*/
+      
+    .featured-logos-section {
+        background-color: lavenderblush;
+
+        font-family: 'Courier New', monospace;
+        text-align: center;
+        margin-top: 20px;
+      }
+  
+      .featured-logos-title {
+        background-color: peachpuff;
+        font-size: 24px;
+        font-weight: bold;
+        margin-bottom: 10px;
+      }
+  
+      .featured-logos-list {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+      }
+  
+      .featured-logos-item {
+        margin: 10px;
+      }
+  
+      .featured-logos-item img {
+        width: 150px;
+        height: auto;
+      }
+
+      
+    .social-media-section {
+        background-color: peachpuff;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 20px;
+      }
+  
+      .social-media-logos {
+        display: flex;
+        align-items: center;
+      }
+  
+      .social-media-logos a {
+        display: inline-block;
+        margin-right: 10px;
+      }
+  
+      .social-media-logos img {
+        width: 30px;
+        height: 30px;
+      }
+  
+      .contact-info {
+        font-size: 14px;
+        color: #777;
+      }
+  
+      .store-location {
+        text-align: right;
+      }         
+  </style>
+</head>
+<body>
+  <div class="navbar">
+    <div class="brand">
+      <img class="brand-logo" src="LOGOS.JPEG" alt="Brand Logo">
+      <span class="brand-name">THE CHANGE</span>
+    </div>
+    <div class="dropdown">
+      <a class="dropdown-toggle" href="#">MENWEAR</a>
+      <div class="dropdown-menu">
+        <a class="dropdown-item" href="#">Jackets</a>
+        <a class="dropdown-item" href="#">Suits</a>
+        <a class="dropdown-item" href="#">Pants</a>
+      </div>
+    </div>
+    <div class="dropdown">
+      <a class="dropdown-toggle" href="#">FOOTWEAR</a>
+      <div class="dropdown-menu">
+        <a class="dropdown-item" href="#">Shoes</a>
+        <a class="dropdown-item" href="#">Sports Shoes</a>
+        <a class="dropdown-item" href="#">Slippers</a>
+      </div>
+    </div>
+    <div class="dropdown">
+      <a class="dropdown-toggle" href="#">ACCESSORIES</a>
+      <div class="dropdown-menu">
+        <a class="dropdown-item" href="#">Watch</a>
+        <a class="dropdown-item" href="#">Belt</a>
+        <a class="dropdown-item" href="#">goggles</a>
+      </div>
+    </div>
+    </div>
+    <section class="section-homepage">
+        <h1 class="discount-text">40% Off
+            <br>
+            MEN'S FALL COLLECTION
+        </h1>
+        <a class="shop-now-button" href="#">Shop Now</a>
+      </section>
+      <div class="shipping-section">
+        <div class="shipping-option">
+          <img src="shiping.png" alt="Free Shipping">
+          <h3>Free Shipping</h3>
+          <p>On all orders over 500 RS</p>
+        </div>
+        <div class="shipping-option">
+          <img src="match.png" alt="Price Matching">
+          <h3>Price Matching</h3>
+          <p>We match any competitor's price</p>
+        </div>
+        <div class="shipping-option">
+          <img src="store.jpeg" alt="Store Pick Up">
+          <h3>Store Pick Up</h3>
+          <p>Shop online and pick up in-store</p>
+        </div>
+      </div>
+      <section class="top-picks-section">
+        <h2 class="top-picks-title">Customer Top Picks for Men's Clothing Accessories</h2>
+        <ul class="top-picks-list">
+          <li class="top-picks-item">
+            <img src="suit.jpg" alt="">
+            <p>MEN"S SUIT</p>
+          </li>
+          <li class="top-picks-item">
+            <img src="watch.jpeg" alt="Accessory 2">
+            <p>LEATHER MEN'S WATCH</p>
+          </li>
+          <li class="top-picks-item">
+            <img src="jacket.jpeg" alt="Accessory 3">
+            <p>LEATHER MEN'S JACKET</p>
+          </li>
+          <li class="top-picks-item">
+            <img src="specs.jpeg" alt="Accessory 4">
+            <p>MEN'S WATCH  </p>
+          </li>
+        </ul>
+      </section>
+      <section class="featured-logos-section">
+        <h2 class="featured-logos-title">Where Our Brand is Featured</h2>
+        <ul class="featured-logos-list">
+          <li class="featured-logos-item">
+            <img src="r.png" alt="Logo 1">
+          </li>
+          <li class="featured-logos-item">
+            <img src="f.png" alt="Logo 2">
+          </li>
+          <li class="featured-logos-item">
+            <img src="a.png" alt="Logo 3">
+          </li>
+          <li class="featured-logos-item">
+            <img src="n.png" alt="Logo 4">
+          </li>
+        </ul>
+      </section>    
+      <section class="social-media-section">
+        <div class="social-media-logos">
+          <a href="#"><img src="face.jpeg" alt="Facebook"></a>
+          <a href="#"><img src="tw.jpeg" alt="Twitter"></a>
+          <a href="#"><img src="insta.jpeg" alt="Instagram"></a>
+        </div>
+        <div class="contact-info">
+          <a href="contact.html">Contact Us</a>
+        </div>
+        <div class="store-location">
+          Store Location: <span>123 Main St, City, Country</span>
+        </div>
+      </section>
+  </div>
+</body>
+</html>
