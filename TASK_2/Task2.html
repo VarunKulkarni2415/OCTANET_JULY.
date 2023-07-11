@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>To Do List</title>
+  <style>
+    .container {
+        
+        background-color: antiquewhite;
+              width: 400px;
+      margin: 20px auto;
+      border: 1px solid #ccc;
+      padding: 20px;
+      font-family: Arial, sans-serif;
+    }
+
+    h2 {
+        font-family: cursive;
+      margin-top: 0;
+    }
+
+    form {
+      margin-bottom: 20px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    input[type="text"],
+    input[type="date"],
+    select {
+      width: 100%;
+      padding: 5px;
+      margin-bottom: 10px;
+    }
+
+    button {
+      background-color: #4CAF50;
+      color: white;
+      padding: 5px 10px;
+      border: none;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #45a049;
+    }
+
+    ul {
+      list-style-type: none;
+      padding-left: 0;
+    }
+
+    li {
+      margin-bottom: 10px;
+    }
+
+    .high-priority {
+      color: red;
+      font-weight: bold;
+    }
+
+    .medium-priority {
+      color: orange;
+    }
+
+    .low-priority {
+      color: green;
+    }
+
+    .task-actions {
+      display: inline-block;
+      margin-left: 10px;
+    }
+
+    .delete-task {
+      color: red;
+      cursor: pointer;
+      margin-left: 5px;
+    }
+
+    .edit-task {
+      color: blue;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>To Do List</h2>
+
+    <form id="task-form">
+      <label for="task">Task:</label>
+      <input type="text" id="task" placeholder="Enter a task" required>
+
+      <label for="deadline">Deadline:</label>
+      <input type="date" id="deadline" required>
+
+      <label for="priority">Priority:</label>
+      <select id="priority" required>
+        <option value="high">High</option>
+        <option value="medium">Medium</option>
+        <option value="low">Low</option>
+      </select>
+
+      <button type="submit">Add Task</button>
+    </form>
+
+    <ul id="task-list"></ul>
+  </div>
+
+  <script>
+    document.getElementById('task-form').addEventListener('submit', function(event) {
+      event.preventDefault();
+
+      var taskInput = document.getElementById('task');
+      var deadlineInput = document.getElementById('deadline');
+      var priorityInput = document.getElementById('priority');
+
+      var taskList = document.getElementById('task-list');
+
+      var task = taskInput.value;
+      var deadline = deadlineInput.value;
+      var priority = priorityInput.value;
+
+      var taskItem = document.createElement('li');
+      taskItem.innerHTML = '<span class="' + priority + '-priority">' + task + '</span> <span class="deadline">Deadline: ' + deadline + '</span>' +
+        '<span class="task-actions">' +
+        '<span class="edit-task">Edit</span>' +
+        '<span class="delete-task">Delete</span>' +
+        '</span>';
+
+      taskList.appendChild(taskItem);
+
+      taskInput.value = '';
+      deadlineInput.value = '';
+      priorityInput.value = 'high';
+
+      var deleteButtons = document.getElementsByClassName('delete-task');
+      for (var i = 0; i < deleteButtons.length; i++) {
+        deleteButtons[i].addEventListener('click', function() {
+          this.parentNode.parentNode.remove();
+        });
+      }
+
+      var editButtons = document.getElementsByClassName('edit-task');
+      for (var i = 0; i < editButtons.length; i++) {
+        editButtons[i].addEventListener('click', function() {
+          var taskText = this.parentNode.parentNode.querySelector('.high-priority, .medium-priority, .low-priority');
+          var deadlineText = this.parentNode.parentNode.querySelector('.deadline');
+
+          taskInput.value = taskText.textContent;
+          deadlineInput.value = deadlineText.textContent.replace('Deadline: ', '');
+
+          taskText.parentNode.remove();
+        });
+      }
+    });
+  </script>
+</body>
+</html>
